@@ -4,12 +4,16 @@ import './Image.css';
 
 export default class Image extends React.Component {
   static propTypes = {
-    image: PropTypes.string
+    image: PropTypes.string,
+    selecteMonster: PropTypes.string
   }
   
   render() {
     return (
-      <img class="image" src={this.props.image} alt="Guess a Pokemon" />
+      <img 
+        className={this.props.selecteMonster ? '' : 'silhouette'}
+        src={this.props.image}
+        alt="Guess a Pokemon" />
     )
   }
 }

@@ -2,13 +2,19 @@ import Pokemon from '../data/pokemon.json';
 
 export default function generatePrompt() {
   const monsterLength = Pokemon.length - 1;
+  const options = [];
+  const selectedAnswer = getRandomIntInclusive(0, 3);
+
+  for (let i = 0; i < 4; i++) {
+    const index = getRandomIntInclusive(0, monsterLength);
+    options.push({
+      ...Pokemon[index],
+      answer: selectedAnswer === i,
+      index
+    });
+  }
   
-  return [
-    Pokemon[getRandomIntInclusive(0, monsterLength)],
-    Pokemon[getRandomIntInclusive(0, monsterLength)],
-    Pokemon[getRandomIntInclusive(0, monsterLength)],
-    Pokemon[getRandomIntInclusive(0, monsterLength)]
-  ]
+  return options;
 }
 
 function getRandomIntInclusive(min, max) {

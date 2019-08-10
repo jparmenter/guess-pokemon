@@ -1,0 +1,13 @@
+li {
+  margin-bottom: 5px;
+  list-style: none;
+  text-transform: capitalize;
+}
+
+label.answer {
+  color: green;
+}
+
+label.incorrect {
+  color: red;
+}
