@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './Image.css';
+import './index.css';
 
 export default class Image extends React.Component {
   static propTypes = {

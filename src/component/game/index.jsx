@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import Image from './Image';
 import Options from './Options';
-import generatePrompt from '../logic/generate-prompt';
+import generatePrompt from '../../logic/generate-prompt';
 
 export default class Game extends React.Component {
   monsters;

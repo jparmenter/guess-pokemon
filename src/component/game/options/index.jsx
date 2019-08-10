@@ -1,7 +1,7 @@
 import React from 'react';
 import Option from './Option';
 import PropTypes from 'prop-types';
-import './Options.css';
+import './index.css';
 
 export default class Options extends React.Component {
   static propTypes = {
