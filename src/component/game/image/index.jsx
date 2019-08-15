@@ -11,7 +11,7 @@ export default class Image extends React.Component {
   render() {
     return (
       <img 
-        className={this.props.selecteMonster ? '' : 'silhouette'}
+        className={this.props.selectedMonster ? '' : 'silhouette'}
         src={this.props.image}
         alt="Guess a Pokemon" />
     )
