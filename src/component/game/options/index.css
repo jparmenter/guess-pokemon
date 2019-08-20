@@ -1,3 +1,7 @@
-ul {
-  width: 250px;
+label.correct {
+  color: green;
+}
+
+label.incorrect {
+  color: red;
 }

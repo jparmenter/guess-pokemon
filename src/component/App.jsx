@@ -1,49 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Game from './Game';
 import Results from './Results';
-import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
-export default class App extends React.Component {
-  totalQuestions = 4;
-  state = {
-    history: [],
-    showResults: false
-  };
+const useStyles = makeStyles(() => ({
+  root: {
+    textAlign: 'center'
+  }
+}));
 
-  updateHistory = history => {
-    this.setState({
-      history
-    });
+export default function App() {
+  const [history, setHistory] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const totalQuestions = 4;
+  const classes = useStyles();
+
+  function updateHistory(history) {
+    setHistory(history);
   }
 
-  resetGame = () => {
-    this.setState({
-      history: [],
-      showResults: false
-    });
+  function resetGame() {
+    setHistory([]);
+    setShowResults(false);
   }
 
-  showResults = () => {
-    this.setState({
-      showResults: true
-    });
-  }
-
-  render() {
-    return (
-      <div className="App">
-        {
-          this.state.showResults ?
-            <Results
-              history={this.state.history}
-              resetHandler={this.resetGame}/> :
-            <Game
-              finishedHandler={this.showResults}
-              history={this.state.history}
-              historyChanged={this.updateHistory}
-              totalQuestions={this.totalQuestions}/>
-        }
-      </div>
-    );
-  }
+  return (
+    <React.Fragment>
+      <Container maxWidth="sm">
+        <Grid
+          container
+          className={classes.root}
+          justify="center"
+          alignItems="center">
+          {
+            showResults ?
+              <Results
+                history={history}
+                resetHandler={resetGame}/> :
+              <Game
+                finishedHandler={() => setShowResults(true)}
+                history={history}
+                historyChanged={updateHistory}
+                totalQuestions={totalQuestions}/>
+          }
+        </Grid>
+      </Container>
+    </React.Fragment>
+  );
 }

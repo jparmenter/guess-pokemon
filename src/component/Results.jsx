@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 export default class Result extends React.Component {
   static propTypes = {
     history: PropTypes.array,
     resetHandler: PropTypes.func
   }
-  trainerType = ['Crusty Juggler', 'Bug Catcher', 'Average', 'Pokemon Trainer', 'Pokemon Master']
+  trainerType = ['Crusty Juggler', 'Bug Catcher', 'Average', 'Cool Boy', 'Pokemon Trainer', 'Pokemon Master']
 
   handleReset = () => {
     this.props.resetHandler();
@@ -29,7 +30,7 @@ export default class Result extends React.Component {
       <div>
         <h1>You are a { this.trainerType[this.getTotalCorrect()] }</h1>
         <p>{this.getTotalCorrect()} / {this.props.history.length}</p>
-        <button type="button" onClick={this.handleReset}>Try Again?</button>
+        <Button variant="contained" onClick={this.handleReset}>Try Again?</Button>
       </div>
     )
   }

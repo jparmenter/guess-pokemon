@@ -1,73 +1,63 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
 import Image from './Image';
 import Options from './Options';
 import generatePrompt from '../../logic/generate-prompt';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
-export default class Game extends React.Component {
-  monsters;
-  answerMonster;
-  state = {
-    selectedMonster: ''
-  };
-  static propTypes = {
-    history: PropTypes.array,
-    historyChanged: PropTypes.func,
-    finishedHandler: PropTypes.func,
-    totalQuestions: PropTypes.number
-  }
+export default function Game(props) {
+  const [value, setValue] = useState('');
+  const [monsters, setMonsters] = useState(generatePrompt());
+  let answerMonster = monsters.find(monster => {
+    return monster.answer;
+  });;
 
-  answerSubmitted = monster => {
+  function answerSubmitted(monster) {
     const results = {
-      answer: this.answerMonster,
+      answer: answerMonster,
       submission: monster
     };
-    this.setState({
-      selectedMonster: monster.name
-    });
-    this.props.history.push(results);
-    this.props.historyChanged(this.props.history);
+    setValue(monster.name)
+    props.history.push(results);
+    props.historyChanged(props.history);
   }
 
-  nextQuestion = () => {
-    this.setState({
-      selectedMonster: ''
-    });
+  function nextQuestion() {
+    setValue('');
 
-    if (this.props.history.length > this.props.totalQuestions) {
-      this.props.finishedHandler();
+    if (props.history.length > props.totalQuestions) {
+      props.finishedHandler();
+    } else {
+      const newMonsters = generatePrompt();
+      setMonsters(newMonsters);
+      answerMonster = newMonsters.find(monster => {
+        return monster.answer;
+      });
     }
   }
 
-  getButtonText = () => {
-    return this.props.history.length > this.props.totalQuestions ?
+  function getButtonText() {
+    return props.history.length > props.totalQuestions ?
       'Finish' :
       'Next';
   }
 
-  render() {
-    if (!this.state.selectedMonster) {
-      this.monsters = generatePrompt();
-      this.answerMonster = this.monsters.find(monster => {
-        return monster.answer;
-      });
-    }
-
-    return (
-      <div className="game">
-        <h1>Who's That Pokemon?</h1>
-        <Image 
-          image={this.answerMonster.src}
-          selectedMonster={this.state.selectedMonster} />
-        <Options
-          monsters={this.monsters}
-          changeHandler={this.answerSubmitted}
-          selectedMonster={this.state.selectedMonster}/>
-        { this.state.selectedMonster ?  
-            <button onClick={this.nextQuestion} type="button">{ this.getButtonText() }</button> :
-            null
-        }
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Typography variant="h3" gutterBottom>
+        Who's That Pokemon?
+      </Typography>
+      <Image 
+        image={answerMonster.src}
+        revealMonster={value} />
+      <Options
+        monsters={monsters}
+        changeHandler={answerSubmitted}
+        value={value}/>
+      { value ?  
+          <Button onClick={nextQuestion} variant="contained">{ getButtonText() }</Button> :
+          null
+      }
+    </div>
+  );
 }
