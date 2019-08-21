@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/guess-pokemon/static/css/main.060a5447.chunk.css",
-    "main.js": "/guess-pokemon/static/js/main.b79b44dc.chunk.js",
-    "main.js.map": "/guess-pokemon/static/js/main.b79b44dc.chunk.js.map",
+    "main.css": "/guess-pokemon/static/css/main.5568962d.chunk.css",
+    "main.js": "/guess-pokemon/static/js/main.c76c3f0b.chunk.js",
+    "main.js.map": "/guess-pokemon/static/js/main.c76c3f0b.chunk.js.map",
     "runtime~main.js": "/guess-pokemon/static/js/runtime~main.9ca3975f.js",
     "runtime~main.js.map": "/guess-pokemon/static/js/runtime~main.9ca3975f.js.map",
-    "static/js/2.827207b6.chunk.js": "/guess-pokemon/static/js/2.827207b6.chunk.js",
-    "static/js/2.827207b6.chunk.js.map": "/guess-pokemon/static/js/2.827207b6.chunk.js.map",
+    "static/js/2.a6dcbbc2.chunk.js": "/guess-pokemon/static/js/2.a6dcbbc2.chunk.js",
+    "static/js/2.a6dcbbc2.chunk.js.map": "/guess-pokemon/static/js/2.a6dcbbc2.chunk.js.map",
     "index.html": "/guess-pokemon/index.html",
-    "precache-manifest.f2762f6dec9bab0f5a5be95a9d76ae74.js": "/guess-pokemon/precache-manifest.f2762f6dec9bab0f5a5be95a9d76ae74.js",
+    "precache-manifest.1147972b1d8d614289227f35362fa26f.js": "/guess-pokemon/precache-manifest.1147972b1d8d614289227f35362fa26f.js",
     "service-worker.js": "/guess-pokemon/service-worker.js",
-    "static/css/main.060a5447.chunk.css.map": "/guess-pokemon/static/css/main.060a5447.chunk.css.map"
+    "static/css/main.5568962d.chunk.css.map": "/guess-pokemon/static/css/main.5568962d.chunk.css.map"
   }
 }
