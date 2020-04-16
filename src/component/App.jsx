@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import Game from './Game';
-import Results from './Results';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import React, { useState } from "react";
+import Game from "./game";
+import Results from "./Results";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import './App.css';
 
 const useStyles = makeStyles(() => ({
   root: {
-    textAlign: 'center'
-  }
+    backgroundColor: "#fff",
+    backgroundRadius: '25%',
+    height: "50vh",
+    textAlign: "center",
+  },
 }));
 
 export default function App() {
@@ -28,23 +32,23 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" fixed>
         <Grid
           container
           className={classes.root}
           justify="center"
-          alignItems="center">
-          {
-            showResults ?
-              <Results
-                history={history}
-                resetHandler={resetGame}/> :
-              <Game
-                finishedHandler={() => setShowResults(true)}
-                history={history}
-                historyChanged={updateHistory}
-                totalQuestions={totalQuestions}/>
-          }
+          alignItems="center"
+        >
+          {showResults ? (
+            <Results history={history} resetHandler={resetGame} />
+          ) : (
+            <Game
+              finishedHandler={() => setShowResults(true)}
+              history={history}
+              historyChanged={updateHistory}
+              totalQuestions={totalQuestions}
+            />
+          )}
         </Grid>
       </Container>
     </React.Fragment>

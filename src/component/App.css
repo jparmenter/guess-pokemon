@@ -1,0 +1,6 @@
+#root {
+    background: linear-gradient(#ff0c12, #d0a200);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}

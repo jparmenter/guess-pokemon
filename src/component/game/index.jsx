@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Image from './Image';
-import Options from './Options';
+import Image from './image';
+import Options from './options';
 import generatePrompt from '../../logic/generate-prompt';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -43,7 +43,7 @@ export default function Game(props) {
   }
 
   return (
-    <div>
+    <div class="game">
       <Typography variant="h3" gutterBottom>
         Who's That Pokemon?
       </Typography>
