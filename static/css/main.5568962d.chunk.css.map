@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,mIAEY,CACZ,kCAAmC,CACnC,iCACF,CAEA,KACE,uEAEF,CAZA,IACE,YAAa,CACb,WACF,CAEA,YACE,4BAAsB,CAAtB,oBACF,CAPA,cACE,WACF,CAEA,gBACE,SACF","file":"main.5568962d.chunk.css","sourcesContent":["label.correct {\r\n  color: green;\r\n}\r\n\r\nlabel.incorrect {\r\n  color: red;\r\n}"]}
