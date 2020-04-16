@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/guess-pokemon/precache-manifest.6529182cfe2a84fd56fdbf599ffa1e42.js"
+  "/guess-pokemon/precache-manifest.a4116b547c6e0db24e37accd1fffae8e.js"
 );
 
 self.addEventListener('message', (event) => {
