@@ -9,7 +9,7 @@ import './App.css';
 const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: "#fff",
-    backgroundRadius: '25%',
+    borderRadius: '15%',
     height: "50vh",
     textAlign: "center",
   },
